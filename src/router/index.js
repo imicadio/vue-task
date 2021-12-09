@@ -6,7 +6,8 @@ import ProductDetail from "../pages/ProductDetail/ProductDetail.vue";
 const routes = [
   {
     name: "HomePage",
-    path: "/", // http://localhost:8080/
+    path: "/product", // http://localhost:8080/
+    alias: '/',
     component: HomePage
   },
   {
@@ -22,7 +23,6 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    console.log(to, from, savedPosition);
     if (savedPosition) {
       return savedPosition;
     } else if (to.hash) {
