@@ -1,25 +1,41 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomePage from "../pages/HomePage/HomePage.vue";
+import NotFound from "../pages/NotFound/NotFound.vue";
+import ProductDetail from "../pages/ProductDetail/ProductDetail.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    name: "HomePage",
+    path: "/", // http://localhost:8080/
+    component: HomePage
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    name: "ProductDetail",
+    path: "/product/:productId",
+    component: ProductDetail,
+  },
+  { path: "/:notFound(.*)", component: NotFound },
+];
 
 const router = createRouter({
+  mode: "history",
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    console.log(to, from, savedPosition);
+    if (savedPosition) {
+      return savedPosition;
+    } else if (to.hash) {
+      const options = {
+        top: document.querySelector(to.hash).offsetTop,
+        behavior: "smooth",
+      };
 
-export default router
+      window.scrollTo(options);
+    } else {
+      return { x: 0, y: 0 };
+    }
+  },
+});
+
+export default router;

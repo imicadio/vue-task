@@ -5,10 +5,12 @@
 html {
   font-size: 16px;
   height: fill-available;
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: fill-available;
   overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
 }
 
