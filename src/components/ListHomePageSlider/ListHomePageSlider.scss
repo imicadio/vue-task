@@ -1,8 +1,30 @@
 .carousel {
     &__track {
+        // gap: 20px;
     }
     &__image {
-        max-width: 300px;
+        position: relative;
+        max-width: 100%;
         height: auto;
+        
+        @include breakpoint(md) {
+            width: 100%;
+            max-width: unset;
+        }
     }
+    &__slide {
+        // padding: 10px;
+    }
+    &__text {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        opacity: .3;
+        @include breakpoint(md) {
+            width: calc(100% - 10px);
+        }
+    }
+
 }
