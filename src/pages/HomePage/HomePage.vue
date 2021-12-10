@@ -1,6 +1,8 @@
 <template>
-  <ul class="homepage">
-    <list-home-page v-for="product in filteredProducts" :key="product._id" :product="product" />
+  <navigation class="homepage__navigation">
+  </navigation>
+  <ul class="homepage__components">
+    <list-home-page v-for="(product, index)  in filteredProducts" :id="'section' + index" :key="product._id" :product="product" />
   </ul>
   <!-- <router-link :to="{ name: 'HomePage', hash: '#section2' }">Test 3</router-link>
     <router-link to="/#section2">Test 3</router-link> -->

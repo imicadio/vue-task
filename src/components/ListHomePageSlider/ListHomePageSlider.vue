@@ -8,8 +8,9 @@
     <Slide v-for="slide in data" :key="slide._id">
       <router-link to="/product/1">
         <img :src="slide.image" :alt="slide.imgText" class="carousel__image" />
-        <div class="carousel__text">
-          <h3>{{ slide.name }}</h3>
+        <div class="carousel__card">
+          <h3 class="card__title">{{ slide.name }} <ion-icon class="card__arrow" name="chevron-forward-outline"></ion-icon></h3>
+          <p class="card__description">{{ renderDescription(slide.description) }}</p>
         </div>
       </router-link>
     </Slide>
@@ -38,6 +39,7 @@ export default {
       itemsToShow: 1,
       snapAlign: "center",
     },
+
     // breakpoints are mobile first
     // any settings not specified will fallback to the carousel settings
     breakpoints: {
@@ -57,6 +59,12 @@ export default {
       },
     },
   }),
+
+  methods: {
+    renderDescription(text) {
+      return text.substring(0, 100) + "...";
+    },
+  },
 };
 </script>
 

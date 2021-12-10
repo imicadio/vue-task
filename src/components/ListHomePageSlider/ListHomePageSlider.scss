@@ -1,30 +1,89 @@
 .carousel {
-    &__track {
-        // gap: 20px;
+  @include breakpoint(md) {
+    width: 96%;
+  }
+
+  &__track {
+    // gap: 20px;
+  }
+
+  &__image {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+
+    @include breakpoint(md) {
+      width: 100%;
+      max-width: unset;
     }
-    &__image {
-        position: relative;
-        max-width: 100%;
-        height: auto;
-        
-        @include breakpoint(md) {
-            width: 100%;
-            max-width: unset;
+  }
+
+  &__slide {
+    // padding: 10px;
+    overflow: hidden;
+
+    &:hover {
+      .carousel {
+        &__card {
+          transform: translateY(0);
+          .card {
+            &__arrow {
+              transform: translateX(-20px);
+            }
+          }
         }
+      }
     }
-    &__slide {
-        // padding: 10px;
-    }
-    &__text {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #333;
-        opacity: .3;
-        @include breakpoint(md) {
-            width: calc(100% - 10px);
-        }
+  }
+
+  &__prev,
+  &__next {
+    background-color: unset;
+    color: #333;
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+  }
+
+  &__prev {
+    transform: translate(-90%, -50%);
+  }
+
+  &__next {
+    transform: translate(90%, -50%);
+  }
+
+  &__card {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    opacity: 0.6;
+    padding: 0 25px;
+    text-align: left;
+    transform: translateY(calc(100% - 65px));
+    transition: all 0.4s ease;
+
+    @include breakpoint(md) {
+      width: calc(100% - 10px);
     }
 
+    .card {
+      &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;        
+      }
+
+      &__arrow {
+        transition: all .4s ease;
+      }
+
+      &__description {
+        line-height: 1.7;
+        margin: 20% 0;
+      }
+    }
+  }
 }
