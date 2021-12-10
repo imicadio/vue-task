@@ -1,21 +1,21 @@
 <template>
   <navigation class="homepage__navigation">
+    <h2>Home Navigation</h2>
+    <ul class="navigation__ul">
+      <the-navigation-home v-for="(product, index)  in filteredProducts" :key="product._id+index" :dataUrl="product" :sectionId="'#section' + index" />        
+    </ul>
   </navigation>
   <ul class="homepage__components">
     <list-home-page v-for="(product, index)  in filteredProducts" :id="'section' + index" :key="product._id" :product="product" />
   </ul>
-  <!-- <router-link :to="{ name: 'HomePage', hash: '#section2' }">Test 3</router-link>
-    <router-link to="/#section2">Test 3</router-link> -->
-  <!-- <ul>
-    <li v-for="(box, index) in boxes" :id="'section' + index" :class="'section'" :key="index">{{ box.name }}</li>
-  </ul> -->
 </template>
 
 <script>
 import ListHomePage from "../../components/ListHomePage/ListHomePage.vue";
+import TheNavigationHome from '../../components/TheNavigationHome/TheNavigationHome.vue';
 
 export default {
-  components: { ListHomePage },
+  components: { ListHomePage, TheNavigationHome },
   computed: {
     filteredProducts() {
       const products = this.$store.getters["products/products"];

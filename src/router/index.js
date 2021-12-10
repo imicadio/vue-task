@@ -7,7 +7,6 @@ const routes = [
   {
     name: "HomePage",
     path: "/product", // http://localhost:8080/
-    alias: '/',
     component: HomePage
   },
   {

@@ -24,6 +24,7 @@ $--bg-color: var(--color);
 
     @include breakpoint(md) {
       width: 30%;
+      margin: 0;
     }
     &::after {
       content: "";

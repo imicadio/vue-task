@@ -1,8 +1,45 @@
 .homepage {
-    &__navigation {
-        display: flex;
-        flex-direction: row;        
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 2px solid rgb(202, 202, 202);
+    border-bottom: 2px solid rgb(202, 202, 202);
+    margin-bottom: 50px;
+    padding: 25px 0;
+
+    @include breakpoint(md) {
+      flex-wrap: unset;
     }
+
+    >h2 {
+      width: 100%;
+      text-align: center;
+
+      @include breakpoint(md) {
+        width: unset;
+        text-align: unset;
+      }
+    }
+
+    .navigation {
+      &__ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 15px;
+        width: 100%;
+
+        @include breakpoint(md) {
+          flex-wrap: unset;
+          width: unset;
+        }
+      }
+    }
+  }
 
   &__components {
     list-style: none;
