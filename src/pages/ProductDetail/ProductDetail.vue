@@ -14,15 +14,15 @@
           <button type="button" class="btn">Bi Big Four Button</button>
         </div>
         <div class="form__icons">
-          <ion-icon name="flame-outline" class="icon"></ion-icon>
-          <ion-icon name="key-outline" class="icon"></ion-icon>
-          <ion-icon name="lock-open-outline" class="icon"></ion-icon>
-          <ion-icon name="copy-outline" class="icon"></ion-icon>
-          <ion-icon name="color-wand-outline" class="icon"></ion-icon>
-          <ion-icon name="rainy-outline" class="icon"></ion-icon>
-          <ion-icon name="bag-handle-outline" class="icon"></ion-icon>
-          <ion-icon name="construct-outline" class="icon"></ion-icon>
-          <ion-icon name="ellipsis-vertical-outline" class="icon"></ion-icon>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="flame-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="key-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="lock-open-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="copy-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="color-wand-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="rainy-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="bag-handle-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="construct-outline" class="icon"></ion-icon></a>
+          <a href="#" :data-tooltip="displayData.price"><ion-icon name="ellipsis-vertical-outline" class="icon"></ion-icon></a>
         </div>
         <div class="form__header">
           <h3 class="header__price">
