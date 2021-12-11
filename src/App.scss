@@ -17,7 +17,7 @@
     max-width: 1400px;
 
     @include breakpoint(md) {
-      margin: 100px 25px;
+      margin: 100px 25px 50px;
     }
   }
 }

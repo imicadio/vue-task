@@ -9,7 +9,7 @@
       <h2 class="img-wrapper__title">{{ product.company }}</h2>
     </div>
     <div class="carousel-wrapper">
-      <list-home-page-slider :data="product.slider" />
+      <list-home-page-slider :data="product.slider" :sectionId="product._id" />
     </div>
     <!-- <router-link :to="{ name: 'ProductDetail', params: {productId: 123 }}">Push Page</router-link> -->
   </li>

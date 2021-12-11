@@ -19,7 +19,6 @@ export default {
   computed: {
     filteredProducts() {
       const products = this.$store.getters["products/products"];
-      console.log(products);
       return products;
     },
     hasProducts() {

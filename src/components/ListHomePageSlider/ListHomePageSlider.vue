@@ -6,7 +6,8 @@
     class="carousel"
   >
     <Slide v-for="slide in data" :key="slide._id">
-      <router-link to="/product/1">
+      <router-link :to="{ name: 'ProductDetail', params: { productId: slide._id }, query: { sectionId: sectionId }}">
+      <!-- <router-link :to="'/product/' + slide._id"> -->
         <img :src="slide.image" :alt="slide.imgText" class="carousel__image" />
         <div class="carousel__card">
           <h3 class="card__title">{{ slide.name }} <ion-icon class="card__arrow" name="chevron-forward-outline"></ion-icon></h3>
@@ -27,7 +28,7 @@ import { Carousel, Navigation, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 export default {
-  props: ["data"],
+  props: ["data", "sectionId"],
   components: {
     Carousel,
     Slide,
