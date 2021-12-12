@@ -37,8 +37,6 @@
           }
         }
 
-        .btn:nth-child(1) {
-        }
         .btn:nth-child(2) {
           flex-grow: 2;
         }
@@ -148,6 +146,10 @@
         font-weight: 600;
         border: none;
 
+        &:hover {
+          background: $c-dark-green;
+        }
+
         .btn__icon {
           font-size: 28px;
         }
@@ -157,7 +159,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         border-bottom: 1px solid $c-silver;
         gap: 15px;
 
@@ -167,8 +169,6 @@
             flex-direction: row;
             gap: 10px;
             align-items: center;
-            flex-grow: 1;
-            justify-content: center;
           }
         }
       }

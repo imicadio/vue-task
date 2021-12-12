@@ -1,18 +1,13 @@
 <template>
-  <a href="#" :data-tooltip="txt"
-    ><base-icon :icon="icon" :customClassIcon="customClassTooltip"
-  /></a>
+  <a href="#" :data-tooltip="txt"><slot></slot></a>
 </template>
 
 <script>
-import BaseIcon from "../BaseIcon/BaseIcon.vue";
-
 export default {
-  components: { BaseIcon },
-  props: ["txt", "icon", "customClassTooltip"],
+  props: ["txt"],
 };
 </script>
 
 <style lang="scss">
-@import './BaseTooltip.scss';
+@import "./BaseTooltip.scss";
 </style>

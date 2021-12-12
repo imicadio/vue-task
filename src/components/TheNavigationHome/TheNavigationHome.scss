@@ -4,12 +4,12 @@ $--bg-square: var(--bg-square);
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #c0c0c073;
+    background-color: $c-gray;
     padding: 15px;
     width: 100%;
     text-decoration: none;
     font-weight: 700;
-    color: #333;
+    color: $c-black;
 
     @include breakpoint(md) {
         width: unset;

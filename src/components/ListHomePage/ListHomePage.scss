@@ -1,4 +1,4 @@
-$--border-style: 3px solid #fff;
+$--border-style: 3px solid $c-white;
 $--bg-color: var(--color);
 
 .list-homepage {
@@ -59,7 +59,7 @@ $--bg-color: var(--color);
     border-top: $--border-style;
     border-bottom: $--border-style;
     text-align: center;
-    color: #fff;
+    color: $c-white;
     z-index: 2;
     &::before,
     &::after {

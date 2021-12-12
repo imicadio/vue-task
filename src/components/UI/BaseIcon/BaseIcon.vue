@@ -1,9 +1,9 @@
 <template>
-    <ion-icon :name="icon" :class="customClassIcon"></ion-icon>
+    <ion-icon :name="icon" :class="customClass"></ion-icon>
 </template>
 
 <script>
 export default {
-    props: ['icon', 'customClassIcon']
+    props: ['icon', 'customClass']
 }
 </script>

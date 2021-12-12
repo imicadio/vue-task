@@ -12,17 +12,18 @@
             v-for="btn in buttonsUp"
             :key="btn"
             :customClass="'btn'"
-            :text="btn"
-          />
+            >{{ btn }}</base-button
+          >
         </div>
         <div class="form__icons">
           <base-tooltip
             v-for="tooltip in tooltipData"
             :key="tooltip.icon"
             :txt="tooltip.text"
-            :icon="tooltip.icon"
-            :customClassTooltip="tooltip.customClass"
-          />
+            ><base-icon
+              :icon="tooltip.icon"
+              :customClass="tooltip.customClass"
+          /></base-tooltip>
         </div>
         <div class="form__header">
           <h3 class="header__price">
@@ -45,18 +46,22 @@
               :customClassSelect="'select__select'"
             />
           </div>
-          <base-button
-            :customClass="'form__button'"
-            :text="'Send form'"
-            :icon="'cart-outline'"
-            :customClassIcon="'btn__icon'"
-          />
+          <base-button :customClass="'form__button'"
+            >Send form<base-icon
+              :icon="'cart-outline'"
+              :customClass="'btn__icon'"
+            />
+          </base-button>
         </div>
         <div class="form__footer">
-          <div class="footer__phone" v-for="data in formFooter" :key="data.icon">
+          <div
+            class="footer__phone"
+            v-for="data in formFooter"
+            :key="data.icon"
+          >
             <base-icon :icon="data.icon" />
             <h5>{{ data.value }}</h5>
-          </div>          
+          </div>
         </div>
       </form>
     </div>
@@ -65,12 +70,12 @@
 
 <script>
 import BaseButton from "../../components/UI/BaseButton/BaseButton.vue";
-import BaseIcon from '../../components/UI/BaseIcon/BaseIcon.vue';
+import BaseIcon from "../../components/UI/BaseIcon/BaseIcon.vue";
 import BaseSelect from "../../components/UI/BaseSelect/BaseSelect.vue";
 import BaseTooltip from "../../components/UI/BaseTooltip/BaseTooltip.vue";
 
 export default {
-  components: { BaseButton, BaseTooltip, BaseSelect, BaseIcon },  
+  components: { BaseButton, BaseTooltip, BaseSelect, BaseIcon },
   data() {
     return {
       displayData: null,
@@ -97,7 +102,7 @@ export default {
       ],
       selectData: [
         {
-          id: "first",
+          id: "Stuck",
           options: [
             { value: "123" },
             { value: "190" },
@@ -108,7 +113,7 @@ export default {
           ],
         },
         {
-          id: "second",
+          id: "Grobbe",
           options: [
             { value: "123x123mm" },
             { value: "190x123mm" },
@@ -119,7 +124,7 @@ export default {
           ],
         },
         {
-          id: "three",
+          id: "Verpackungseinheit 10st.",
           options: [
             { value: "1" },
             { value: "2" },

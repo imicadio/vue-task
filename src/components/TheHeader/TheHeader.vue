@@ -1,18 +1,18 @@
 <template>
-    <header class="header">
-        <h2>Logo</h2>
-    </header>
+  <header class="header">
+    <base-container>
+      <h2>Logo</h2>
+    </base-container>
+  </header>
 </template>
 
 <script>
+import BaseContainer from "../UI/BaseCoontainer/BaseContainer.vue";
 export default {
-    setup() {
-        
-    },
-}
+  components: { BaseContainer },
+};
 </script>
 
-
 <style lang="scss">
-  @import './TheHeader.scss';
+@import "./TheHeader.scss";
 </style>

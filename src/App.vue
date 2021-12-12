@@ -1,24 +1,26 @@
 <template>
   <the-header />
-  <div class="app-content">
+  <base-container :customClass="'app-content'">
     <router-view />
-  </div>
+  </base-container>
   <the-footer />
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader/TheHeader.vue";
 import TheFooter from "./components/TheFooter/TheFooter.vue";
+import BaseContainer from "./components/UI/BaseCoontainer/BaseContainer.vue";
 
 export default {
   components: {
     TheHeader,
     TheFooter,
+    BaseContainer,
   },
 };
 </script>
 
 <style lang="scss">
-  @import "./App.scss";
-  @import "./style/main.scss";
+@import "./App.scss";
+@import "./style/main.scss";
 </style>
