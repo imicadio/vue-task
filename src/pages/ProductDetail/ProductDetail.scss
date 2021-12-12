@@ -1,0 +1,184 @@
+.product-detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  &__image {
+    width: 40%;
+
+    > img {
+      width: 100%;
+      height: auto;
+      max-width: 560px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 560px;
+    min-height: 500px;
+
+    .form {
+      &__buttons-up {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        align-items: stretch;
+        gap: 10px;
+
+        .btn {
+          border: 1px solid $c-silver;
+          padding: 10px;
+          color: $c-black;
+
+          &:hover {
+            background: $c-silver-light;
+          }
+        }
+
+        .btn:nth-child(2) {
+          flex-grow: 2;
+        }
+        .btn:nth-child(3) {
+          flex-grow: 2;
+        }
+        .btn:nth-child(4) {
+          flex-grow: 4;
+          min-width: 50%;
+        }
+      }
+
+      &__icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px 0;
+        margin-top: 10px;
+        border-top: 1px solid $c-silver;
+
+        .icon {
+          font-size: 25px;
+        }
+      }
+
+      &__header {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 25px;
+        padding: 25px;
+        background: #f6f6f6;
+        border-bottom: 1px solid $c-silver;
+        place-items: center;
+
+        @include breakpoint(558px) {
+          place-items: baseline;
+        }
+
+        .header {
+          &__price {
+            font-size: 32px;
+            margin: 0;
+
+            &__span {
+              font-size: 14px;
+            }
+          }
+
+          &__person {
+            margin: 0;
+
+            @include breakpoint(558px) {
+              width: 100%;
+              text-align: right;
+            }
+
+            &__span {
+              color: $c-green;
+            }
+          }
+        }
+      }
+
+      &__content {
+        padding: 25px;
+        background: #f6f6f6;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-auto-rows: 45px;
+        grid-gap: 25px 50px;
+
+        .content {
+          &__select {
+            display: flex;
+            flex-direction: row;
+            font-weight: 600;
+            gap: 10px;
+
+            .select {
+              &__label {
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+              }
+
+              &__select {
+                text-align: none;
+                border: 1px solid $c-silver;
+                padding: 10px;
+                background: $c-white;
+                width: -webkit-fill-available;
+                min-width: 65px;
+                appearance: none;
+                position: relative;
+                background-image: url("../../assets/chevron-down-outline.svg");
+                background-repeat: no-repeat;
+                background-position: right 15px center;
+                background-size: 20px 20px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      &__button {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        background: $c-green;
+        color: $c-white;
+        font-weight: 600;
+        border: none;
+
+        &:hover {
+          background: $c-dark-green;
+        }
+
+        .btn__icon {
+          font-size: 28px;
+        }
+      }
+
+      &__footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 1px solid $c-silver;
+        gap: 15px;
+
+        .footer {
+          &__phone {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
