@@ -60,7 +60,7 @@
         .icon {
           font-size: 25px;
         }
-        }
+      }
 
       &__header {
         display: grid;
@@ -129,6 +129,12 @@
                 background: $c-white;
                 width: -webkit-fill-available;
                 min-width: 65px;
+                appearance: none;
+                position: relative;
+                background-image: url("../../assets/chevron-down-outline.svg");
+                background-repeat: no-repeat;
+                background-position: right 15px center;
+                background-size: 20px 20px;
               }
             }
           }
