@@ -5,9 +5,13 @@ import ProductDetail from "../pages/ProductDetail/ProductDetail.vue";
 
 const routes = [
   {
+    path: "/",
+    redirect: "/product",
+  },
+  {
     name: "HomePage",
-    path: "/product", // http://localhost:8080/
-    component: HomePage
+    path: "/product",
+    component: HomePage,
   },
   {
     name: "ProductDetail",
